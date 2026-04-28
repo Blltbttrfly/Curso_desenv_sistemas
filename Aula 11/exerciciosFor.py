@@ -20,7 +20,7 @@
 # Iprima a soma dos numeros pares de 0 ate 10000
 soma = 0
 contador = 0
- for i in range(0,1001):
+for i in range(0,1001):
     if i % 2 == 0:
        soma += i
        contador += 1
@@ -29,4 +29,4 @@ contador = 0
 
 # Imprima a quantidade de numeros pares de 0 ate 1000
 
-for i in range 
+#for i in range
