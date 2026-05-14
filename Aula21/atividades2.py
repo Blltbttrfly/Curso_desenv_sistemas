@@ -6,13 +6,14 @@ agenda = {
     "Berdly": 1003,
     "ralsei": 1004
 }
+while True:
+    nome = input("Digite o contato que deseja visualizar: ")
 
-nome = input("Digite o contato que deseja telefonar: ")
+    if nome.upper() == "SAIR":
+        print("Encerrando app agenda ... ")
+        break
 
-if nome in agenda:
-    print(f"Telefone: {agenda[nome]}")
-else:
-    print("Nome não encontrado!")
+    print(f"{nome}: {agenda.get(nome, "Nome não encontrado!")}")
 
 # 1 - Peça para o usuário o nome e telefone de 5 novas pessoas e adicione na agenda.
 while True: 
