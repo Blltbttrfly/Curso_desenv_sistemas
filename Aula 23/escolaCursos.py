@@ -66,9 +66,7 @@ Menu de Opções:
     op = input("Digite o número da opção desejada: ")
 
     if op == "1":
-        # Crie um sistema de cadastro onde o usuário preenche as informações do funcionário e na sequência armazena esse funcionário no sistema.
-        #Informações do funcionário serão Nome, CPF, Cargo, Salário e Departamento
-        #Valide se o cpf tem 11 caracteres
+        
         print("CADASTRO DE ALUNO")
 
         nome = input("Digite o nome: ")
@@ -140,9 +138,9 @@ FICHA DE ALUNOS:
                 print(f"{contadorB}. {aluno["Nome"]} - {aluno["Situação"]}")
                 contadorB += 1
 
-        numero = int(input("Digite o número do aluno desejado para alterar: "))
-        aluno_escolhido = alunos[numero-1]
-        aluno_escolhido["Situação"] = "Não ativo"
+            numero = int(input("Digite o número do aluno desejado para alterar: "))
+            aluno_escolhido = alunos[numero-1]
+            aluno_escolhido["Situação"] = "Não ativo"
 
 
 
