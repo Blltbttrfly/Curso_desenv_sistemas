@@ -90,7 +90,7 @@ Menu de Opções:
         print("ALUNOS CADASTRADOS")
         contador = 1
         for aluno in alunos:
-            print(f"{contador}. {aluno["Nome"]} - {aluno["Curso"]}")
+            print(f"{contador}. {aluno['Nome']} - {aluno['Curso']}")
             contador += 1
 
 
@@ -99,7 +99,7 @@ Menu de Opções:
         print("ALUNOS CADASTRADOS")
         contador = 1
         for aluno in alunos:
-            print(f"{contador}. {aluno["Nome"]} - {aluno["Curso"]}")
+            print(f"{contador}. {aluno['Nome']} - {aluno['Curso']}")
             contador += 1
 
         numero = int(input("Digite o número do aluno desejado para ver mais informações: (0=Cancelar)"))
@@ -112,11 +112,11 @@ Menu de Opções:
             print(f"""
 FICHA DE ALUNOS:
                   
-    Nome: {aluno_escolhido["Nome"]}
-    Curso: {aluno_escolhido["Curso"]}
-    Turno: {aluno_escolhido["Turno"]}
-    Data de início: {aluno_escolhido["Data de Início"]}
-    Situação: {aluno_escolhido["Situação"]}
+    Nome: {aluno_escolhido['Nome']}
+    Curso: {aluno_escolhido['Curso']}
+    Turno: {aluno_escolhido['Turno']}
+    Data de início: {aluno_escolhido['Data de Início']}
+    Situação: {aluno_escolhido['Situação']}
 
 """)
             
@@ -125,7 +125,7 @@ FICHA DE ALUNOS:
         contador = 1
         for aluno in alunos:
             if aluno["Situação"] == "Ativo":
-                print(f"{contador}. {aluno["Nome"]} - {aluno["Situação"]}")
+                print(f"{contador}. {aluno['Nome']} - {aluno['Situação']}")
                 contador += 1
         
         alterar_situ = input("Deseja alterar a situação de algum aluno? ")
@@ -135,7 +135,7 @@ FICHA DE ALUNOS:
         if alterar_situ == "Sim":
             contadorB = 1
             for aluno in alunos:
-                print(f"{contadorB}. {aluno["Nome"]} - {aluno["Situação"]}")
+                print(f"{contadorB}. {aluno['Nome']} - {aluno['Situação']}")
                 contadorB += 1
 
             numero = int(input("Digite o número do aluno desejado para alterar: "))
