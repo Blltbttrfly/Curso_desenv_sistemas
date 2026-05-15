@@ -51,13 +51,14 @@ while True:
 
     print(f"""
 
---------------- GERENCIAMENTO CURSOS Escola DELAY ---------------
+--------------- GERENCIAMENTO CURSOS ESCOLA DELAY ---------------
           
 Menu de Opções:
           
           1. Cadastrar aluno
           2. Ver alunos
           3. Ver aluno Específico
+          4. Ver alunos ativos
 
           0. Sair
 """)
@@ -100,7 +101,7 @@ Menu de Opções:
         print("ALUNOS CADASTRADOS")
         contador = 1
         for aluno in alunos:
-            print(f"{contador}. {aluno["Nome"]} - {aluno["CPF"]}")
+            print(f"{contador}. {aluno["Nome"]} - {aluno["Curso"]}")
             contador += 1
 
         numero = int(input("Digite o número do aluno desejado para ver mais informações: (0=Cancelar)"))
@@ -114,12 +115,34 @@ Menu de Opções:
 FICHA DE ALUNOS:
                   
     Nome: {aluno_escolhido["Nome"]}
-    CPF: {funcionario_escolhido["CPF"]}
-    Cargo: {funcionario_escolhido["Cargo"]}
-    Salário: R$ {funcionario_escolhido["Salário"]:,.2f}
-    Departamento: {funcionario_escolhido["Departamento"]}
+    Curso: {aluno_escolhido["Curso"]}
+    Turno: {aluno_escolhido["Turno"]}
+    Data de início: {aluno_escolhido["Data de início"]}
+    Situação: {aluno_escolhido["Situação"]}
 
 """)
+            
+    elif op == "4":
+        print("ALUNOS COM SITUAÇÃO ATIVA")
+        contador = 1
+        for aluno in alunos:
+            if aluno["Situação"] == "Ativo":
+                print(f"{contador}. {aluno["Nome"]} - {aluno["Situação"]}")
+                contador += 1
+        
+        alterar_situ = input("Deseja alterar a situação de algum aluno? ")
+        
+        
+        
+        if alterar_situ == "Sim":
+            contadorB = 1
+            for aluno in alunos:
+                print(f"{contadorB}. {aluno["Nome"]} - {aluno["Situação"]}")
+            contadorB += 1
+
+        numero = int(input("Digite o número do aluno desejado para alterar: "))
+
+
     elif op == "0":
         print("ENCERRANDO PROGRAMA...")
         break
