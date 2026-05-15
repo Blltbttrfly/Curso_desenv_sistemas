@@ -75,14 +75,14 @@ Menu de Opções:
 
         curso = input("Digite o curso: ")
         turno = input("Digite o turno (manhã, tarde, noite): ")
-        data = input("Digite a data de início: ")
+        data = input("Digite a data de Início: ")
         situacao = input("Digite a situação: ")
 
         novo_aluno = {
             "Nome": nome,
             "Curso": curso,
             "Turno": turno,
-            "Data de início":data,
+            "Data de Início":data,
             "Situação": situacao
         }
 
@@ -117,7 +117,7 @@ FICHA DE ALUNOS:
     Nome: {aluno_escolhido["Nome"]}
     Curso: {aluno_escolhido["Curso"]}
     Turno: {aluno_escolhido["Turno"]}
-    Data de início: {aluno_escolhido["Data de início"]}
+    Data de início: {aluno_escolhido["Data de Início"]}
     Situação: {aluno_escolhido["Situação"]}
 
 """)
@@ -138,9 +138,12 @@ FICHA DE ALUNOS:
             contadorB = 1
             for aluno in alunos:
                 print(f"{contadorB}. {aluno["Nome"]} - {aluno["Situação"]}")
-            contadorB += 1
+                contadorB += 1
 
         numero = int(input("Digite o número do aluno desejado para alterar: "))
+        aluno_escolhido = alunos[numero-1]
+        aluno_escolhido["Situação"] = "Não ativo"
+
 
 
     elif op == "0":
