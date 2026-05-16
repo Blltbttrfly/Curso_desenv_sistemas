@@ -103,6 +103,7 @@ Menu de Opções:
             contador += 1
 
         numero = int(input("Digite o número do aluno desejado para ver mais informações: (0=Cancelar)"))
+        
 
         if numero == 0:
             print("Cancelando operação...")
@@ -132,24 +133,36 @@ FICHA DE ALUNOS:
         
         
         
-        if alterar_situ == "Sim":
+        if alterar_situ.capitalize() == "Sim":
+            
             contadorB = 1
+            
             for aluno in alunos:
                 print(f"{contadorB}. {aluno['Nome']} - {aluno['Situação']}")
                 contadorB += 1
-
+        
+            
             numero = int(input("Digite o número do aluno desejado para alterar: "))
-            aluno_escolhido = alunos[numero-1]
-            aluno_escolhido["Situação"] = "Não ativo"
+            
+            while True:
+                if numero >= 1 and numero <= len(alunos):
+                    aluno_escolhido = alunos[numero-1]
+                    
+                    
+                    if aluno_escolhido["Situação"] == "Ativo":
+                        aluno_escolhido["Situação"] = "Não ativo"
+                    else:
+                        aluno_escolhido["Situação"] = "Ativo"
+                    break
+                        
 
 
 
     elif op == "0":
-        print("ENCERRANDO PROGRAMA...")
-        break
+            print("ENCERRANDO PROGRAMA...")
+            break
     else:
         print("DIGITE UMA OPÇÃO VÁLIDA!")
 
 
-
-    input("DIGITE ENTER PARA CONTINUAR")
+        input("DIGITE ENTER PARA CONTINUAR")
