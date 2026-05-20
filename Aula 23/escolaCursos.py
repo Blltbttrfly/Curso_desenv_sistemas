@@ -148,7 +148,6 @@ FICHA DE ALUNOS:
                 if numero >= 1 and numero <= len(alunos):
                     aluno_escolhido = alunos[numero-1]
                     
-                    
                     if aluno_escolhido["Situação"] == "Ativo":
                         aluno_escolhido["Situação"] = "Não ativo"
                     else:
@@ -163,6 +162,5 @@ FICHA DE ALUNOS:
             break
     else:
         print("DIGITE UMA OPÇÃO VÁLIDA!")
-
 
         input("DIGITE ENTER PARA CONTINUAR")
